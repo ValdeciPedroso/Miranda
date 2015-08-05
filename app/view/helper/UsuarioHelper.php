@@ -147,8 +147,9 @@
 	} 
 	public static function getVerificaSessao(){
 		$id =  new SessaoHelper();
+		// echo '<script>alert('.$_SESSION["id"].')</script>';
 	    if ($id->getId()!=null){
-          return 'administrador';
+          	return 'administrador';
 	    }
 	    else
 	    	return 'adminMiranda';

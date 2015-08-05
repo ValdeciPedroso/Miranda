@@ -164,7 +164,9 @@
          }
          
          public static function getFormularioLogin(){
-         	if ($_GET['id'] == 'error'){
+         	$html='';
+         	$class='';
+         	if (isset($_GET['id']) && $_GET['id'] == 'error'){
          	    $html ='	
          		   <div class="alert alert-danger" role="alert">
 					 <center>
@@ -176,7 +178,7 @@
 				$class='input-error';	
          	}
 
-           $html = $html.'<form role="form" action="verificaLogin" method="post" class="login-form">
+           $html .='<form role="form" action="verificaLogin" method="post" class="login-form">
 				    	<div class="form-group">
 				    		<label class="sr-only" for="form-username">Usuário:</label>
 				        	<input type="text" id="email" name="email" placeholder="Usuário..." class="form-username form-control '.$class.'" id="form-username" required>
