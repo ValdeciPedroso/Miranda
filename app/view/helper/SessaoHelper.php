@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
 * Esta responsável por enviar dados da sessão do usuario
 * @version 0.1 
 * @author Valdeci Pedroso <valdecipti@gmail.com> 
@@ -31,8 +31,11 @@
 		* @access static  
 		*/ 
 		public static function getId(){
-		
-			 $id = $_SESSION["id"];
+			//@amats verifica se a variavel session esta setada antes de atribuir ao $id
+			$id = null;
+			if(isset($_SESSION['id'])){
+				$id = $_SESSION["id"];
+			}
 			return  $id;
 		
 		}

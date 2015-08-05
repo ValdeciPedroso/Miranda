@@ -137,14 +137,15 @@
 		public function verificaUsuario($email='',$senha=''){
 		        
 				$st = DBConn::getInstance()->prepare("SELECT * FROM usuario WHERE email = :email ");
-				$st->bindParam(":email", $email,PDO::PARAM_STR);
+				$st->bindParam(":email", $email, PDO::PARAM_STR);
 				$st->execute();
 				$row = $st->fetch(PDO::FETCH_ASSOC);
-				if( base64_decode($row['senha'])==$senha){ 
+				if( base64_decode($row['senha']) == $senha){ 
+					
 					if( $row['id']){
 						session_start();
-						$_SESSION["id"]=$row['id'];
-						$_SESSION["nome"]=$row['nome'];
+						$_SESSION["id"]= $row['id'];
+						$_SESSION["nome"]= $row['nome'];
 						session_register($row['nome']);
 				      return true;
 					}
