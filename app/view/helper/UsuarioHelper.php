@@ -22,8 +22,8 @@
 		* @access static  
 		*/ 
 		public static function getFormularioUsuario(){
-		
-		$id= $_GET['id'];
+		$html='';
+		$id = (isset($_GET['id']))?$_GET['id']:'';
 		$c = new CadastroUsuarioController();
 		$usuario=$c->find($id);
 		$id= $usuario->id;

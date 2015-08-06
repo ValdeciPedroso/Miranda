@@ -18,7 +18,7 @@
 		*/ 
 		const HOST = 'localhost';
 		const USER = 'root';
-		const PASS = 'nuttert';
+		const PASS = '';
 		const DB = 'Miranda';
 		const CHARSET = 'utf8';
 		
