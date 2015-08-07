@@ -134,7 +134,7 @@
 		* @param $id, id para pesquisa de usuario
 		* @return  instancia do usuario
 		*/
-		public function verificaUsuario($email='',$senha=''){
+		public function verificaUsuario($email='', $senha=''){
 		        
 				$st = DBConn::getInstance()->prepare("SELECT * FROM usuario WHERE email = :email ");
 				$st->bindParam(":email", $email, PDO::PARAM_STR);
@@ -143,14 +143,15 @@
 				if( base64_decode($row['senha']) == $senha){ 
 					
 					if( $row['id']){
-						session_start();
+						// a sessão já foi iniciada em outra pagina
+						// session_start();
 						$_SESSION["id"]= $row['id'];
 						$_SESSION["nome"]= $row['nome'];
-						session_register($row['nome']);
-				      return true;
+						// verificar utilização do session_register();
+						// session_register($row['nome']);
+				      	return true;
 					}
-			    }
-				else
+			    }else
 				return false;
 				
 		}

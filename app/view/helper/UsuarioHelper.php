@@ -5,17 +5,15 @@
 * @author Valdeci Pedroso <valdecipti@gmail.com> 
 * @access public 
 */ 
-
 	class UsuarioHelper {
 		/** 
 		* Função que redireciona o login para erro de login ou página home
 		* @access static  
 		*/ 
 		public static function getVerificaLogin(){
-			
 				 $v = new VerificaLoginController();
 				 $url = $v->verificaUsuario($_POST['email'],$_POST['senha']);
-				 echo  header("Location: ".$url);
+				 header("Location: ".$url);
 		}
 		/** 
 		* Função que retorna o formulario
