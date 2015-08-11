@@ -26,7 +26,7 @@ class ProdutoHelper {
 					 }				
 	}
 	
-	public static function recebeProduto(){
+public static function recebeProduto(){
 	// Recebe as variáveis enviadas pelo método POST
 	$id=$_POST['id'];
 	$nome=$_POST['nome'];
@@ -47,42 +47,42 @@ class ProdutoHelper {
 				
 	}
 	public static function formularioProduto(){
-$id=$_GET['id'];
+				$id=$_GET['id'];
 
-$c = new CadastroProdutoController();
+				$c = new CadastroProdutoController();
 
-$produto=$c->find($id);
-$id= $produto->id;
-$nome=$produto->nome;
-$fabricante=$produto->fabricante;
-$descricao=$produto->descricao;
-$preco=$produto->preco;
-$estoque=$produto->estoque;
-			if($id){
-			   $html = "<form action=\"recebeProduto\" method=\"post\">
-				<input type=\"hidden\" name=\"id\" value=".$id." />
-				<span>Nome:<span><br /> <input type=\"text\" name=\"nome\" value=".$nome." required autofocus /><br />
-				Fabricante:<br /> <input type=\"text\" name=\"fabricante\" value=".$fabricante." required /><br />
-				Descricao: <br /><textarea  name=\"descricao\" required>".$descricao."</textarea><br />
-				Preco: <br /><input type=\"number\" name=\"preco\"   pattern=\"[0-9]+([\.|,][0-9]+)?\" step=\"0.01\" value=".$preco." required/><br />
-				Estoque: <br /><input type=\"number\" name=\"estoque\" value=".$estoque." required /><br />
-				<br /><input class=\"btn  btn-primary\" value=\"Alterar\"type=\"submit\" />
-				</form>	";
-			}
-			else{
-			$html = "<form action=\"recebeProduto\" method=\"post\">
-				<input type=\"hidden\" name=\"id\" />
-				<span>Nome:<span><br /> <input type=\"text\" name=\"nome\"required autofocus /><br />
-				Fabricante:<br /> <input type=\"text\" name=\"fabricante\" required /><br />
-				Descricao: <br /><textarea  name=\"descricao\" required></textarea><br />
-				Preco: <br /><input type=\"number\" name=\"preco\"   pattern=\"[0-9]+([\.|,][0-9]+)?\" step=\"0.01\"required/><br />
-				Estoque: <br /><input type=\"number\" name=\"estoque\"  required /><br />
-				<br /><input class=\"btn  btn-primary\" value=\"Cadastrar\"type=\"submit\" />
-				</form>	";
-			}
+				$produto=$c->find($id);
+				$id= $produto->id;
+				$nome=$produto->nome;
+				$fabricante=$produto->fabricante;
+				$descricao=$produto->descricao;
+				$preco=$produto->preco;
+				$estoque=$produto->estoque;
+				if($id){
+				   $html = "<form action=\"recebeProduto\" method=\"post\">
+					<input type=\"hidden\" name=\"id\" value=".$id." />
+					<span>Nome:<span><br /> <input type=\"text\" name=\"nome\" value=".$nome." required autofocus /><br />
+					Fabricante:<br /> <input type=\"text\" name=\"fabricante\" value=".$fabricante." required /><br />
+					Descricao: <br /><textarea  name=\"descricao\" required>".$descricao."</textarea><br />
+					Preco: <br /><input type=\"number\" name=\"preco\"   pattern=\"[0-9]+([\.|,][0-9]+)?\" step=\"0.01\" value=".$preco." required/><br />
+					Estoque: <br /><input type=\"number\" name=\"estoque\" value=".$estoque." required /><br />
+					<br /><input class=\"btn  btn-primary\" value=\"Alterar\"type=\"submit\" />
+					</form>	";
+				}
+				else{
+				$html = "<form action=\"recebeProduto\" method=\"post\">
+					<input type=\"hidden\" name=\"id\" />
+					<span>Nome:<span><br /> <input type=\"text\" name=\"nome\"required autofocus /><br />
+					Fabricante:<br /> <input type=\"text\" name=\"fabricante\" required /><br />
+					Descricao: <br /><textarea  name=\"descricao\" required></textarea><br />
+					Preco: <br /><input type=\"number\" name=\"preco\"   pattern=\"[0-9]+([\.|,][0-9]+)?\" step=\"0.01\"required/><br />
+					Estoque: <br /><input type=\"number\" name=\"estoque\"  required /><br />
+					<br /><input class=\"btn  btn-primary\" value=\"Cadastrar\"type=\"submit\" />
+					</form>	";
+				}
 			
 			return $html;
-			}
+	}
 	public static function removerQuantidadeProduto(){	
 	
 	// Recebe as variáveis enviadas pelo método POST
