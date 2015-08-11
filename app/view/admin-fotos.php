@@ -16,13 +16,13 @@
          <div class="row">
           <!--formulario das fotos-->
              <div class="col-md-4">
-              <form>
+              <form action="recebeAlbum" method="POST">
                 <fieldset>
                 <div class="form-group">
                   <label class="control-label" for="adicionar-fotos">Imagem:</label><br/>
                   <input id="adicionar-fotos" name="adicionar-fotos" class="input-file" type="file"><br/>
-                  <label class="control-label" for="adicionar-fotos">Nome do albúm:</label><br/>
-                  <input type="text" id="email" name="titulo" placeholder="Titulo..." class="form-username form-control" >
+                  <label class="control-label" for="adicionar-fotos">Nome do álbum:</label><br/>
+                  <input type="text" id="email" name="nome" placeholder="Titulo..." class="form-username form-control" >
                 </div>
 
                 <!-- Text input-->
@@ -50,7 +50,7 @@
                   <label class="control-label" for="button1id"></label>
                   <div >
                     <button id="button1id" name="button1id" class="btn btn-success">Enviar</button>
-                    <button id="enviar" name="enviar" class="btn btn-danger">Cancelar</button>
+                    <input type="button" class="btn btn-danger" value="Cancelar">
                   </div>
                 </div>
 
