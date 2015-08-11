@@ -8,7 +8,7 @@
 			<h1>Usuário <small>/ Cadastro</small></h1>
 			<ol class="breadcrumb">
 			  <li><a href="home"><i class="icon-dashboard"></i> Home</a></li>
-			  <li class="active"><i class="icon-file-alt"></i>Usuário /Cadastro / Status do cadastro</li>
+			  <li class="active"><i class="icon-file-alt"></i>Usuário / Cadastro / Status do cadastro</li>
 			</ol>
 			<div class="alert alert-dismissable alert-success">
 	                <?PHP echo UsuarioHelper::recebeUsuario(); ?>
