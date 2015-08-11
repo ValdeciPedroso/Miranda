@@ -23,8 +23,8 @@
 		$html='';
 		$id = (isset($_GET['id']))?$_GET['id']:'';
 		$c = new CadastroUsuarioController();
-		$usuario=$c->find($id);
-		$id= $usuario->id;
+		$usuario = $c->find($id);
+		$id = $usuario->id;
 		$nome=$usuario->nome;
 		$email=$usuario->email;
 		$telefone=$usuario->telefone;
