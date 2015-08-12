@@ -16,11 +16,12 @@
          <div class="row">
           <!--formulario das fotos-->
              <div class="col-md-4">
-              <form action="recebeAlbum" method="POST">
+              <!-- definindo enctype="multipart/form-data" -->
+              <form action="recebeAlbum" method="POST" enctype="multipart/form-data">
                 <fieldset>
                 <div class="form-group">
                   <label class="control-label" for="adicionar-fotos">Imagem:</label><br/>
-                  <input id="adicionar-fotos" name="adicionar-fotos" class="input-file" type="file"><br/>
+                  <input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file"><br/>
                   <label class="control-label" for="adicionar-fotos">Nome do álbum:</label><br/>
                   <input type="text" id="email" name="nome" placeholder="Titulo..." class="form-username form-control" >
                 </div>
