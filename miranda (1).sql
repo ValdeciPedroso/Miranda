@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Ago-2015 às 15:33
+-- Generation Time: 12-Ago-2015 às 16:16
 -- Versão do servidor: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -30,18 +30,20 @@ CREATE TABLE IF NOT EXISTS `album` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `legenda` varchar(255) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  `id_imagens` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `id_categoria` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Extraindo dados da tabela `album`
+-- Estrutura da tabela `imagens`
 --
 
-INSERT INTO `album` (`id`, `nome`, `legenda`, `id_categoria`, `id_imagens`) VALUES
-(1, 'Nome do album', 'Legenda do algum', 2, 1),
-(2, 'Casamento', 'Albúm de casamento', 1, 1),
-(3, 'álbum  novo', 'Aniversario', 2, 1);
+CREATE TABLE IF NOT EXISTS `imagens` (
+  `id` int(11) NOT NULL,
+  `id_album` int(11) NOT NULL,
+  `endereco` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -76,6 +78,12 @@ ALTER TABLE `album`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `imagens`
+--
+ALTER TABLE `imagens`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
@@ -89,7 +97,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
+--
+-- AUTO_INCREMENT for table `imagens`
+--
+ALTER TABLE `imagens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
