@@ -19,7 +19,7 @@
 			
 			//se ($id) == sucesso
 			if($id)
-				return "Álbum ".$cadAlbum->nome." inserido com sucesso ";	
+				return $id;	
 			else
 				return 'Erro no Cadastrar Álbum!';
 	       
