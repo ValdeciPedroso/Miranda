@@ -17,14 +17,14 @@
 
 				$cadImg = new CadastroImagem();// instancia objeto CadastroImagem
 				//Cria um diretorio para salvar as imagens do album
-				if(!mkdir("assets/img/album-img/$nome", 0700)){
+				if(!mkdir("assets/img/album-img/$id_album", 0700)){
 					echo 'Atenção, Já existe um album com esse nome<br />';
 					return;
 				}
 				// percorre o array de imagens
 				foreach ($_FILES["imagens"]["error"] as $key => $error) {
 					// Definir o diretório onde salvar os arquivos.
-				    $destino = "assets/img/album-img/$nome/" . $_FILES["imagens"]["name"][$i];
+				    $destino = "assets/img/album-img/$id_album/" . $_FILES["imagens"]["name"][$i];
 				   	
 				    // Move o arquivo para o diretório de destino
 				    move_uploaded_file($_FILES["imagens"]["tmp_name"][$i], $destino );
