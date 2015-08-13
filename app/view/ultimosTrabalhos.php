@@ -3,7 +3,12 @@
 	$lista = $ultimosTrabalhos->getUltimosAlbuns(4);
  ?>
 <div class="row">
-	<?php foreach ($lista as $key => $value) { ?>
+
+	<?php
+    if(count($lista) == 0){
+        echo 'Nenhum trabalho cadastrado!';
+    }
+    foreach ($lista as $key => $value) { ?>
 		<div class="col-sm-3">
 	        <div class="work wow fadeInUp">
 	        	<?php 
@@ -19,7 +24,7 @@
 	            </div>
 	        </div>
 	    </div>
-	<?php } ?>
+<?php } ?>
 	
     <!-- <div class="col-sm-3">
         <div class="work wow fadeInDown">
