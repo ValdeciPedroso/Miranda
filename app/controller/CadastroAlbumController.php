@@ -24,6 +24,17 @@
 				return 'Erro no Cadastrar Álbum!';
 	       
 		
-	}
+		}
+
+		public static function getUltimosAlbuns($ultimos_qtd){
+
+		
+			$cadAlbum = new CadastroAlbum();
+
+			$lista = $cadAlbum->getUltimosAlbuns($ultimos_qtd);
+
+			return $lista;
+		
+		}
 	
 }
