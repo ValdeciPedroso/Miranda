@@ -28,6 +28,30 @@
 		
 		}
 
+		public static function getUltimosAlbuns($ultimos_qtd){
+
+		
+			$stmt = DBConn::getInstance()->prepare("SELECT * FROM album ORDER BY id LIMIT $ultimos_qtd");
+			
+			$stmt->execute();
+			
+			$lista = array();
+			
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+				$u = new CadastroAlbum();
+				
+				foreach($row as $k => $v)
+					$u->$k = $v;
+			
+				$lista[] = $u;
+
+			}
+			
+			return $lista;
+		
+		}
+
 		
 	
 	}
