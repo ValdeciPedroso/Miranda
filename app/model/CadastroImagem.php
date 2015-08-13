@@ -26,6 +26,30 @@
 		
 		}
 
+		public static function getImagensAlbum($id_album){
+
+		
+			$stmt = DBConn::getInstance()->prepare("SELECT * FROM imagens WHERE id_album = $id_album");
+			
+			$stmt->execute();
+			
+			$lista = array();
+			
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+				$u = new CadastroImagem();
+				
+				foreach($row as $k => $v)
+					$u->$k = $v;
+			
+				$lista[] = $u;
+
+			}
+			
+			return $lista;
+		
+		}
+
 		
 	
 	}
