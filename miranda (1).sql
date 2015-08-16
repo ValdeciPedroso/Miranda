@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Ago-2015 às 16:16
+-- Generation Time: 16-Ago-2015 às 23:59
 -- Versão do servidor: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -31,7 +31,15 @@ CREATE TABLE IF NOT EXISTS `album` (
   `nome` varchar(255) NOT NULL,
   `legenda` varchar(255) NOT NULL,
   `id_categoria` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `album`
+--
+
+INSERT INTO `album` (`id`, `nome`, `legenda`, `id_categoria`) VALUES
+(52, 'Teste 1', 'qweqwe', 2),
+(53, 'wallpaper', 'testando a legenda', 2);
 
 -- --------------------------------------------------------
 
@@ -42,8 +50,9 @@ CREATE TABLE IF NOT EXISTS `album` (
 CREATE TABLE IF NOT EXISTS `imagens` (
   `id` int(11) NOT NULL,
   `id_album` int(11) NOT NULL,
-  `endereco` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `endereco` varchar(255) NOT NULL,
+  `legenda` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -97,12 +106,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
