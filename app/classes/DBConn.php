@@ -19,7 +19,7 @@
 		const HOST = 'localhost';
 		const USER = 'root';
 		const PASS = '';
-		const DB = 'Miranda';
+		const DB = 'miranda';
 		const CHARSET = 'utf8';
 		
 		/** 

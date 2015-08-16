@@ -32,17 +32,17 @@
 		    if(isset($id)){
 		       $html = " <form action=\"recebeUsuario\" method=\"post\">
 					<input type=\"hidden\" name=\"id\" value=".$id." />
-					Nome:    <br/><input type=\"text\" name=\"nome\" value=".$nome." required autofocus class=\"form-username form-control\"/><br />
+					Nome:    <br/><input type=\"text\" name=\"nome\" value=".$nome." required autofocus class=\"form-username form-control \"/><br />
 					Email:   <br/><input type=\"email\" name=\"email\" value=".$email." required class=\"form-username form-control\"/><br />
 					Telefone:<br/><input type=\"phone\"  name=\"telefone\" required value=".$telefone." class=\"form-username form-control\"/><br />";
 
 				if ($id == $_SESSION["id"]){
-                	$html .= " Senha: <br /><input type=\"password\" name=\"senha\" required/><br /><br />
-					          <input type=\"submit\"  class=\"btn  btn-primary\" value=\"Editar\" onclick=\"return confirm('".$cadastro->nome." Seu usuário será alterado, sendo necessário efetuar login novamente! deseja  continuar?');\"/>
+                	$html .= " Senha: <br /><input type=\"password\"   class=\"form-control\" name=\"senha\" required /><br /><br />
+					          <input type=\"submit\"  class=\"btn  btn-primary form-control\" value=\"Editar\" onclick=\"return confirm('".(isset($cadastro->nome))." Seu usuário será alterado, sendo necessário efetuar login novamente! deseja  continuar?');\"/>
 				             </form></div>";
 				}
 				else{
-					$html .= " <br /><input type=\"submit\"  class=\"btn  btn-primary\" value=\"Editar\"  />
+					$html .= " <br /><input type=\"submit\"  class=\"btn form-control btn-primary\" value=\"Editar\"  />
 				             </form>";	
 				}
 
@@ -55,7 +55,7 @@
 					Email:<br /> <input type=\"email\" name=\"email\" class=\"form-username form-control\" required /><br />
 					Telefone: <br /><input type=\"phone\"  name=\"telefone\" class=\"form-username form-control\" required/><br />
 					Senha: <br /><input type=\"password\" name=\"senha\" class=\"form-username form-control\" required/><br />
-					<br /><input type=\"submit\"  class=\"btn  btn-primary\" value=\"Cadastrar\" />
+					<br /><input type=\"submit\"  class=\"btn  btn-primary  form-control\" value=\"Cadastrar\" /><br />
 			   </form>	
 			   "; 
 			}
@@ -82,7 +82,7 @@
 								
 							    if(($cadastro->id) == $_SESSION["id"]){
 								  echo "</td>
-										 <td><a href='excluirUsuario?id=".$cadastro->id."' onclick=\"return confirm('".$cadastro->nome." Seu usuário será Excluído! deseja sair?');\"><i class=\"fa fa-times\"></i></a></td>
+										 <td><a href='excluirUsuario?id=".$cadastro->id."' onclick=\"return confirm('".(isset($cadastro->nome))." Seu usuário será Excluído! deseja sair?');\"><i class=\"fa fa-times\"></i></a></td>
 								     </tr>";
 								}
 								else{	  

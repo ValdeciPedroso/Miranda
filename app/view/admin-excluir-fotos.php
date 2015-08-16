@@ -4,92 +4,110 @@
     <div id="wrapper">
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
          <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de fotos","Excluir"); ?>
-    <div class="row">
+        
           <!--formulario das fotos-->
-             <div class="col-md-offset-1 col-md-11">
-                  <ul class="nav navbar-nav">
-                    <li><a href="admin-fotos"><i class="fa fa-table"></i> Adicionar Fotos</a></li>
-                    <li  class="disabled"><a href="admin-excluir-fotos"><i class="fa fa-edit"></i> Excluir Fotos</a></li>
+             <div >
+                  <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="admin-fotos">Cadastrar</a></li>
+                    <li role="presentation" class="active"><a href="#">Editar e Excluir</a></li>
                   </ul>
                </div><!-- /.navbar-collapse -->
 
-             <div class="col-md-offset-1 col-md-4">
-                <fieldset>
-                    <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                      <div class="accordion-heading">
-                        <a  class="accordion-toggle btn btn-info"  data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                          Buscar por Albúm
-                        </a>
-                      </div>
-                      <div id="collapseThree" class="accordion-body collapse ">
-                        <div class="accordion-inner">
-                          <form action="admin-fotos-excluir-selecionar.php" method="post">
-                            <div class="form-group">
-                              <label class="control-label" for="categoria">Categoria:</label>
-                                <select id="categoria" name="categoria" class="form-control">
-                                  <option value="diversos">Casamento de tal...</option>
-                                  <option value="banda">Anniversário do joão</option>
-                                </select>
-                            </div>
-                                <button class="btn btn-success" >Buscar</button>
-                            </form>
-                         </div>   
-                       </div>
-                    </div><!--acordion grupo 1-->
-                    <br/>
-                    <div class="accordion-group">
-                      <div class="accordion-heading">
-                        <a  class="accordion-toggle btn btn-info"  data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                          Buscar por Categoria
-                        </a>
-                      </div>
-                      <div id="collapseOne" class="accordion-body collapse ">
-                        <div class="accordion-inner">
-                          <form action="admin-fotos-excluir-selecionar.php" method="post">
-                            <div class="form-group">
-                              <label class="control-label" for="categoria">Categoria:</label>
-                                <select id="categoria" name="categoria" class="form-control">
-                                  <option value="diversos">Jantares Dançantes, casamentos e formaturas</option>
-                                  <option value="banda">Banda</option>
-                                  <option value="infantil">Festas Kids</option>
-                                   <option value="aniversarios">Aniversarios</option>
-                                   <option value="carnaval">carnaval</option>
-                                </select>
-                            </div>
-                                <button class="btn btn-success" >Buscar</button>
-                            </form>
-                         </div>   
-                       </div>
-                    </div><!--acordion grupo 1-->
-                    <br/>
-                    <div class="accordion-group">
-                      <div class="accordion-heading">
-                        <a class="accordion-toggle btn btn-info" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                          Buscar por ordem adicionada
-                        </a>
-                      </div>
-                      <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                          <form action="admin-fotos-excluir-selecionar.php" method="post">
-                            <div class="form-group2">
-                              <label class="control-label" for="categoria">Ordem adicionada</label>
-                              <select id="ordem" name="ordem" class="form-control">
-                                <option value="0">Ordem</option>
-                                <option value="1">Últimas Adicionadas</option>
-                                <option value="2">Antigas</option>
-                              </select>
-                            </div><br />
-                            <button class="btn btn-success">Buscar</button>
-                          </form> 
-                        </div>
-                      </div>
-                    </div><!--acordion grupo2-->
+             <div class="well well-lg">
+                  <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Ordenar por:</h3>
                   </div>
-                 </fieldset>
-              </div><!--fim coluna form-->  
-           </div><!--fim coluna -->   
- </div><!-- /.page-wrapper -->
-
+                  <div class="panel-body">
+                    
+                    <select id="ordem" name="ordem">
+                          <option value="0">Categoria</option>
+                          <option value="1">Últimas Adicionadas</option>
+                          <option value="2">Antigas</option>
+                     </select>
+                     <select id="ordem" name="Ordem" >
+                          <option value="0">Ordem</option>
+                          <option value="1">Últimas Adicionadas</option>
+                          <option value="2">Antigas</option>
+                     </select>
+                     <select id="ordem" name="ordem" >
+                          <option value="0">Ordem</option>
+                          <option value="1">Últimas Adicionadas</option>
+                          <option value="2">Antigas</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="thumbnail">
+                      <div class="row ">
+                          <?php $ultimosTrabalhos = new CadastroAlbumController();
+                           $lista = $ultimosTrabalhos->getUltimosAlbuns(4); ?>
+                         <?php
+                            if(count($lista) == 0){
+                                echo 'Nenhum trabalho cadastrado!';
+                            }foreach ($lista as $key => $value) { ?>
+                         <div class="col-lg-3" >
+                           <div class="panel panel-default">
+                           <div class="panel-body">
+                                <?php 
+                                  $cadastroImagemController = new CadastroImagemController();
+                                  $imagens = $cadastroImagemController->getImagensAlbum($lista[$key]->id);
+                                ?>
+                               <?php echo' <a class="thumbnail sb DivFoto" href="assets/img/album-img/'.$lista[$key]->id.'/'.$imagens[0]->endereco.'" > <img class="foto" src="assets/img/album-img/'.$lista[$key]->id.'/'.$imagens[0]->endereco.'"> </a>'; ?>
+                              <div class="breadcrumb legendas">
+                                <small>legendas.... Neque porro quisquam est qui dolorem ipsum quia dolor sit</small>
+                              </div>
+                              <center>
+                                <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                  <span class="glyphicon glyphicon-wrench" ></span>
+                                </button>
+                                 <button type="button" class="btn btn-warning" aria-label="right Align">
+                                  <span class="glyphicon glyphicon-remove" ></span>
+                                </button>
+                              </center>  
+                           </div>
+                           </div>
+                         </div>
+                         <?php } ?>
+                          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                    <div class="modal-dialog modal-sm">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h4 class="modal-title" id="gridSystemModalLabel">Editar Foto:</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="container-fluid">
+                                            <div class="row">
+                                              <div class="form-group">
+                                                    <label class="control-label" for="adicionar-fotos">Selecione para alterar a imagem.</label><br/>
+                                                    <small><input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file"></small><br/>
+                                                    <label class="control-label" for="adicionar-fotos">Alterar álbum:</label><br/>
+                                                    <select id="ordem" name="Ordem" class="form-username form-control">
+                                                      <option value="0">Ordem</option>
+                                                      <option value="1">Últimas Adicionadas</option>
+                                                      <option value="2">Antigas</option>
+                                                    </select>
+                                               </div>
+                                            </div>
+                                            <form>
+                                            <div class="form-group">
+                                              <label for="message-text" class="control-label">Legenda:</label>
+                                              <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                          </form>
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                          <button type="button" class="btn btn-primary">Concluir</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                      </div>
+                  </div>
+              </div>  
+</div><!-- /.page-wrapper -->
 
 <?PHP echo AdminGenericosHelper::getRodape(); ?>

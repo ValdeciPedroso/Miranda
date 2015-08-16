@@ -6582,3 +6582,14 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.foto{
+max-height: 150px;
+}
+
+.DivFoto{
+  min-height: 160px;
+}
+
+.legendas{
+height: 80px;
+}

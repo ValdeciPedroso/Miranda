@@ -5,17 +5,20 @@
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
          <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de fotos","Adicionar"); ?>
 
-        <div class=" col-md-offset-1 col-md-11">
-          <div class="col-lg-12">
-            <ul class="nav navbar-nav">
-              <li class="disabled"><a href="admin-fotos"><i class="fa fa-table"></i> Adicionar Fotos</a></li>
-              <li><a href="admin-excluir-fotos"><i class="fa fa-edit"></i> Excluir Fotos</a></li>
-            </ul>
-         </div><!-- /.navbar-collapse -->
-       
-         <div class="row">
-          <!--formulario das fotos-->
-             <div class="col-md-4">
+              <div >
+                  <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Cadastrar</a></li>
+                    <li role="presentation" ><a href="admin-excluir-fotos">Editar e Excluir</a></li>
+                  </ul>
+               </div><!-- /.navbar-collapse -->
+
+             <div class="well well-lg">
+                  <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Enviar:</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div  class="col-md-4">
               <!-- definindo enctype="multipart/form-data" -->
               <form action="recebeAlbum" method="POST" enctype="multipart/form-data">
                 <fieldset>
@@ -57,11 +60,13 @@
 
                 </fieldset>
                 </form>
-              </div><!--fim coluna form-->  
+
+                    
+                  </div>
+                </div>
            </div><!--fim coluna -->   
-      </div><!-- /.row -->
-      </div><!-- /.page-wrapper -->
-       </div> <!--fim coluna-->
- </div><!-- /#wrapper -->
- <?PHP echo AdminGenericosHelper::getRodape(); ?>
+ </div><!-- /.page-wrapper -->
+
+
+<?PHP echo AdminGenericosHelper::getRodape(); ?>
 

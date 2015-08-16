@@ -22,6 +22,7 @@
 
 					    <!-- Add custom CSS here -->
 					    <link href="assets/css/sb-admin.css" rel="stylesheet">
+					    <link rel="stylesheet" href="assets/css/smoothbox.css">
 					    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 					    <!-- Page Specific CSS -->
 					    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">';
@@ -37,6 +38,8 @@
 					     <script src="assets/js/morris/chart-data-morris.js"></script>
 					     <script src="assets/js/tablesorter/jquery.tablesorter.js"></script>
 					     <script src="assets/js/tablesorter/tables.js"></script>
+                         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+	                     <script type="text/javascript" src="assets/js/smoothbox.js"></script>
 				      </body>
                     </html>';  
 
@@ -151,15 +154,15 @@
 
          public static function setTitulo($Titulo="",$SubTit=""){
          	return '<div id="page-wrapper">
-			         <div class="col-md-12">
-			          <div class="col-lg-12 gallery">
-			            <h1> Gerenciar Fotos <small>Painel Administratico | Miranda Fotográfia</small></h1>
-			            <ul class="breadcrumb">
-			              <li><a href="#">Home</a> <span class="divider"></span></li>
-			              <li class="active"> '.$Titulo.'<span class="divider"></span></li>
-			              <li class="active"> '.$SubTit.'</li>
-			            </ul>
-			          </div>
+				         <div class="col-md-12 alert alert-info">
+				          <div class="col-lg-12 gallery">
+				            <h3> Gerenciar Fotos <small>Painel Administratico | Miranda Fotográfia</small></h3>
+				            <ul class="breadcrumb">
+				              <li><a href="#">Home</a> <span class="divider"></span></li>
+				              <li class="active"> '.$Titulo.'<span class="divider"></span></li>
+				              <li class="active"> '.$SubTit.'</li>
+				            </ul>
+				          </div>
 			        </div><!-- /.row -->';
          }
          
