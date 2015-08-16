@@ -20,13 +20,26 @@
                   <div class="panel-body">
                     <div  class="col-md-4">
               <!-- definindo enctype="multipart/form-data" -->
-              <form action="recebeAlbum" method="POST" enctype="multipart/form-data">
+              <form action="recebeFoto" method="POST" enctype="multipart/form-data">
                 <fieldset>
                 <div class="form-group">
                   <label class="control-label" for="adicionar-fotos">Imagem:</label><br/>
-                  <input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file"><br/>
-                  <label class="control-label" for="adicionar-fotos">Nome do álbum:</label><br/>
-                  <input type="text" id="email" name="nome" placeholder="Titulo..." class="form-username form-control" >
+                  <input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file" required ><br/>
+                  <div class="form-group">
+                  <label class="control-label" for="album">Escolha um Albúm:</label>
+                  <div>
+                    <?php $albuns = new CadastroAlbumController();
+                    $lista = $albuns->getAlbuns("");?>
+                    <select id="album" name="album" class="form-control">
+                       <?php 
+                             if(count($lista) != 0){
+                                echo 'Nenhum trabalho cadastrado!';
+                            }foreach ($lista as $key => $value) { 
+                               echo '<option value="'.$lista[$key]->id.':'.$lista[$key]->nome.'">'.$lista[$key]->nome.'</option>';
+                            }?> 
+                    </select>
+                  </div>
+                </div>
                 </div>
 
                 <!-- Text input-->
@@ -35,17 +48,6 @@
                   <div>
                   <textarea id="legenda" name="legenda" type="text" placeholder="Descrição ... " class="form-control" row="2"></textarea>
                     
-                  </div>
-                </div>
-
-                <!-- Select Basic -->
-                <div class="form-group">
-                  <label class="control-label" for="categoria">Categoria</label>
-                  <div>
-                    <select id="categoria" name="categoria" class="form-control">
-                      <option value="1">Casamentos, Jantares, Formaturas</option>
-                      <option value="2">Aniversários</option>
-                    </select>
                   </div>
                 </div>
 

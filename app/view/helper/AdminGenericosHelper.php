@@ -78,7 +78,8 @@
 					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Fotos<b class="caret"></b></a>
 					              <ul class="dropdown-menu">
 					                <li><a href="admin-fotos">Adicionar/Editar</a></li>
-					                <li><a href="admin-categoria">Categorias</a></li>
+					                <li><a href="admin-categoria">Albuns</a></li>
+					                <li><a href="admin-categoria">Categoria</a></li>
 					              </ul>
 					            </li>
 					            <li class="dropdown">

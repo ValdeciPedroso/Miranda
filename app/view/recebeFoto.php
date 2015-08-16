@@ -11,7 +11,7 @@
 			  <li class="active"><i class="icon-file-alt"></i>Álbum / Cadastro / Status do cadastro</li>
 			</ol>
 			<div class="alert alert-dismissable alert-success">
-	                <?PHP echo AlbumHelper::recebeAlbum(); ?>
+	                <?PHP echo FotosHelper::recebeFoto(); ?>
 			    <br/>
 				<br/>
 				<a href="#" class="btn btn-success"> Cadastrar Álbum</a>

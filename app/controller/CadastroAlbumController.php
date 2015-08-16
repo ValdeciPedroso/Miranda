@@ -36,5 +36,17 @@
 			return $lista;
 		
 		}
+
+		public static function getAlbuns($ordenar){
+
+		
+			$cadAlbum = new CadastroAlbum();
+
+			$lista = $cadAlbum->getAlbuns($ordenar);
+
+			return $lista;
+		
+		}
+		
 	
 }

@@ -6591,5 +6591,8 @@ max-height: 150px;
 }
 
 .legendas{
-height: 80px;
+height: 50px;
+overflow:scroll;
+text-align: center;
+font-size: 11px;
 }

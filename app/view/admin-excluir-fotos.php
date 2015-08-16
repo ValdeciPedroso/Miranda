@@ -4,6 +4,9 @@
     <div id="wrapper">
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
          <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de fotos","Excluir"); ?>
+         <?PHP  $ordenar = (isset($_GET['ord']))?($_GET['ord']):null;
+                $album = (isset($_GET['album']))?($_GET['album']):null;
+         ?> 
         
           <!--formulario das fotos-->
              <div >
@@ -16,59 +19,69 @@
              <div class="well well-lg">
                   <div class="panel panel-primary">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Ordenar por:</h3>
+                    <h3 class="panel-title">Filtrar por:</h3>
                   </div>
                   <div class="panel-body">
-                    
-                    <select id="ordem" name="ordem">
-                          <option value="0">Categoria</option>
-                          <option value="1">Últimas Adicionadas</option>
-                          <option value="2">Antigas</option>
-                     </select>
-                     <select id="ordem" name="Ordem" >
-                          <option value="0">Ordem</option>
-                          <option value="1">Últimas Adicionadas</option>
-                          <option value="2">Antigas</option>
-                     </select>
-                     <select id="ordem" name="ordem" >
-                          <option value="0">Ordem</option>
-                          <option value="1">Últimas Adicionadas</option>
-                          <option value="2">Antigas</option>
-                     </select>
+                    <select onchange="top.location.href = 'admin-excluir-fotos?ord='
+                      + this.options[ this.selectedIndex ].value" >
+                      <option value="">Ordenar</option>
+                      <option value="ASC">Primeiras Adicionadas</option>
+                      <option value="DESC">Mais Recentes</option>
+                    </select>
+
+                    <?php $albuns = new CadastroAlbumController();
+                    $lista = $albuns->getAlbuns("");?>
+                    <select onchange="top.location.href = 'admin-excluir-fotos?album='
+                      + this.options[ this.selectedIndex ].value" >
+                       <option value="">buscar por Albúm</option>
+                       <?php 
+                             if(count($lista) != 0){
+                                echo 'Nenhum trabalho cadastrado!';
+                            }foreach ($lista as $key => $value) { 
+                               echo '<option value="'.$lista[$key]->id.'">'.$lista[$key]->nome.'</option>';
+                            }?> 
+                    </select>
                   </div>
                 </div>
-                <div class="row clearfix">
+                <div >
                   <div class="thumbnail">
+                      <?php $fotos = new CadastroImagemController();
+                      ?>
                       <div class="row ">
-                          <?php $ultimosTrabalhos = new CadastroAlbumController();
-                           $lista = $ultimosTrabalhos->getUltimosAlbuns(4); ?>
                          <?php
+                            if (isset($ordenar))
+                              $lista = $fotos->getFotos($ordenar);
+                            else if (isset($album))    
+                              $lista = $fotos->getFotosAlbum($album);
+                            else
+                              $lista = $fotos->getFotos("");
+                            
                             if(count($lista) == 0){
                                 echo 'Nenhum trabalho cadastrado!';
                             }foreach ($lista as $key => $value) { ?>
-                         <div class="col-lg-3" >
-                           <div class="panel panel-default">
-                           <div class="panel-body">
-                                <?php 
-                                  $cadastroImagemController = new CadastroImagemController();
-                                  $imagens = $cadastroImagemController->getImagensAlbum($lista[$key]->id);
-                                ?>
-                               <?php echo' <a class="thumbnail sb DivFoto" href="assets/img/album-img/'.$lista[$key]->id.'/'.$imagens[0]->endereco.'" > <img class="foto" src="assets/img/album-img/'.$lista[$key]->id.'/'.$imagens[0]->endereco.'"> </a>'; ?>
-                              <div class="breadcrumb legendas">
-                                <small>legendas.... Neque porro quisquam est qui dolorem ipsum quia dolor sit</small>
-                              </div>
-                              <center>
-                                <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target=".bs-example-modal-sm">
-                                  <span class="glyphicon glyphicon-wrench" ></span>
-                                </button>
-                                 <button type="button" class="btn btn-warning" aria-label="right Align">
-                                  <span class="glyphicon glyphicon-remove" ></span>
-                                </button>
-                              </center>  
-                           </div>
-                           </div>
-                         </div>
-                         <?php } ?>
+                              <div class="col-lg-3" >
+                                 <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <?php 
+                                          $cadastroImagemController = new cadastroImagemController();
+                                          $imagens = $cadastroImagemController->getImagensAlbum($lista[$key]->id);
+                                          echo ' <a class="thumbnail sb DivFoto" href="assets/img/album-img/'.$lista[$key]->id_album.'/'.$lista[$key]->endereco.'" > <img class="foto" src="assets/img/album-img/'.$lista[$key]->id_album.'/'.$lista[$key]->endereco.'"> </a>'; 
+                                        ?>
+                                        <div class="breadcrumb legendas">
+                                          <p><?php echo $lista[$key]->legenda; ?></p>
+                                        </div>
+                                        <center>
+                                          <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                            <span class="glyphicon glyphicon-wrench" ></span>
+                                          </button>
+                                           <button type="button" class="btn btn-warning" aria-label="right Align">
+                                            <span class="glyphicon glyphicon-remove" ></span>
+                                          </button>
+                                        </center>  
+                                    </div>
+                                </div>
+                            </div>
+                         <?php }?>
                           <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                                     <div class="modal-dialog modal-sm">
                                       <div class="modal-content">

@@ -2297,6 +2297,7 @@ if (typeof jQuery === 'undefined') {
   }
 
 
+
   // AFFIX DATA-API
   // ==============
 
@@ -2312,6 +2313,6 @@ if (typeof jQuery === 'undefined') {
 
       Plugin.call($spy, data)
     })
-  })
+  }
 
 }(jQuery);

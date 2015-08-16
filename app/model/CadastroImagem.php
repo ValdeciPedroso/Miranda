@@ -8,20 +8,21 @@
 		public $id;
 		public $id_album;
 		public $endereco;//Endereço da imagem
+		public $legenda;
 		
 		public function insertImagem(){
 		
 			$stmt = DBConn::getInstance()->prepare(
 						"INSERT INTO imagens
-							(id_album, endereco) 
+							(id_album, endereco, legenda) 
 							VALUES 
-							(:id_album,:endereco)"
+							(:id_album,:endereco, :legenda)"
 					);
 				
 			
 			$arr[':id_album'] = $this->id_album;
 			$arr[':endereco'] = $this->endereco;
-			
+			$arr[':legenda'] = $this->legenda;
 			return ($stmt->execute($arr)) ? DBConn::getInstance()->lastInsertId() : false;
 		
 		}
