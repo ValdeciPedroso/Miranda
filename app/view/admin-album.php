@@ -24,13 +24,13 @@
                 <fieldset>
                 <div class="form-group">
                   <label class="control-label" for="adicionar-fotos">Nome:</label><br/>
-                  <input id="adicionar-album" name="name" multiple class="form-control" type="text" required ><br/>
+                  <input id="adicionar-album" name="nome" multiple class="form-control" type="text" required ><br/>
                   <div class="form-group">
                   <label class="control-label" for="album">Escolha uma categoria:</label>
                   <div>
                     <?php $albuns = new CadastroAlbumController();
                     $lista = CadastroCategoria::getCategorias(); ?>
-                    <select id="album" name="album" class="form-control">
+                    <select id="categoria" name="categoria" class="form-control">
                        <?php 
                              if(count($lista) != 0){
                                 echo 'Nenhum trabalho cadastrado!';

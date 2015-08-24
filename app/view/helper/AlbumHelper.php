@@ -59,7 +59,29 @@ class AlbumHelper {
 								 </tr>";
 					 }				
 	}
-	
+	public static function recebeAlbum(){
+			     
+                // $name = $_POST['album'];
+                // $categoria = $_POST['categoria'];                
+                // $legenda = (isset($_POST['legenda']))?($_POST['legenda']):null;
+
+				
+				$i = 0;// sera o contador de cada imagem do foreach
+
+				// $cpc = new CadastroAlbumController();//instanciando objeto CadastroAlbumController
+				$id_album = CadastroAlbumController::inserirAlbum();// Insere album no banco e pega o id para inserir as imagens
+                //Cria um diretorio para salvar as imagens do album
+				if(!mkdir("assets/img/album-img/$id_album", 0700)){
+					echo 'Atenção, Já existe um album com esse nome<br />';
+					return;
+				}
+				if($id_album){
+					echo 'Album '.$_POST['nome'].' cadastrado com sucesso';
+				}
+				// $cadAlbum = new CadastroAlbum();// instancia objeto CadastroImagem
+				
+				
+		}
 public static function recebeProduto(){
 	// Recebe as variáveis enviadas pelo método POST
 	$id=$_POST['id'];

@@ -46,7 +46,7 @@
 		 }
 		 public static function getMenu(){
 
-			    if (sessaoHelper::getId()== NULL){
+			    if (sessaoHelper::getId() == NULL){
 					return '<script language= "JavaScript"> location.href="404";</script>';
 				}else{
 

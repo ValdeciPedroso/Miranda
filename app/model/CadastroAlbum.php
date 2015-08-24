@@ -7,10 +7,10 @@
  
 		public $id;
 		public $nome;
-		public $descricao;
 		public $categoria;
+		public $legenda;
 		
-		/**public function insertAlbum(){
+		public function insertAlbum(){
 		
 			$stmt = DBConn::getInstance()->prepare(
 						"INSERT INTO album
@@ -26,8 +26,19 @@
 			
 			return ($stmt->execute($arr)) ? DBConn::getInstance()->lastInsertId() : false;
 		
-		}**/
+		}
+		public function atualizaAlbum(){
+			$stmt = DBConn::getInstance()->prepare(
+						"UPDATE album SET nome = :nome,legenda = :legenda, id_categoria = :categoria WHERE id = :id"
+					);
+			
+			$arr['id'] = $this->id;
+			$arr[':nome'] = $this->nome;
+			$arr[':legenda'] = $this->legenda;
+			$arr[':categoria'] = $this->categoria;
 
+			return ($stmt->execute($arr)) ? DBConn::getInstance()->lastInsertId() : false;
+		}
 		public static function getUltimosAlbuns($ultimos_qtd){
 
 		
@@ -90,6 +101,29 @@
 				
 				foreach($row as $k => $v)
 					$u->$k = $v;
+			
+				$lista[] = $u;
+
+			}
+			
+			return $lista;
+		
+		}
+
+		public static function getAlbumId($id){
+		    $stmt = DBConn::getInstance()->prepare("SELECT * FROM album WHERE id = $id");
+		
+			$stmt->execute();
+			
+			$lista = array();
+			
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+				$u = new CadastroAlbum();
+				
+				foreach($row as $k => $v){
+					$u->$k = $v;
+				}
 			
 				$lista[] = $u;
 
