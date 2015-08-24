@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Ago-2015 às 23:59
--- Versão do servidor: 5.6.25
--- PHP Version: 5.6.11
+-- Generation Time: 24-Ago-2015 às 03:44
+-- Versão do servidor: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `miranda`
@@ -31,15 +31,39 @@ CREATE TABLE IF NOT EXISTS `album` (
   `nome` varchar(255) NOT NULL,
   `legenda` varchar(255) NOT NULL,
   `id_categoria` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `album`
 --
 
 INSERT INTO `album` (`id`, `nome`, `legenda`, `id_categoria`) VALUES
-(52, 'Teste 1', 'qweqwe', 2),
-(53, 'wallpaper', 'testando a legenda', 2);
+(52, 'Teste 1', ' Atualizando Legenda do teste 1 ', 3),
+(53, 'wallpaper', 'Wallpapers', 4),
+(56, 'animais', '   Descrição do Album  animais ', 5),
+(57, 'Bodas de ouro', 'Legenda bodas de ouro', 2),
+(58, 'Formatura', 'Formatura descrição', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categoria`
+--
+
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nome`) VALUES
+(2, 'Casamento'),
+(3, 'Formatura'),
+(4, '15 Anos'),
+(5, 'Animais');
 
 -- --------------------------------------------------------
 
@@ -52,7 +76,18 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   `id_album` int(11) NOT NULL,
   `endereco` varchar(255) NOT NULL,
   `legenda` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `imagens`
+--
+
+INSERT INTO `imagens` (`id`, `id_album`, `endereco`, `legenda`) VALUES
+(34, 52, '11745620_537107676428023_7201302448515086830_n.jpg', 'Teste de adição '),
+(35, 56, 'Lindo-Tigre.jpg', 'Tigre'),
+(36, 53, 'logo.png', 'Teste de imagem'),
+(37, 57, '1380232_529987447077415_912859782_n.jpg', ''),
+(38, 57, '10426155_741209669288524_3410495218667819376_n.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -87,6 +122,12 @@ ALTER TABLE `album`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `imagens`
 --
 ALTER TABLE `imagens`
@@ -106,12 +147,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+--
+-- AUTO_INCREMENT for table `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
