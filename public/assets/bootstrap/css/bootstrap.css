@@ -6596,3 +6596,6 @@ overflow:scroll;
 text-align: center;
 font-size: 11px;
 }
+.ultimosTrabalhos{
+max-height: 250px;
+}

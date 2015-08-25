@@ -1023,4 +1023,71 @@ footer {
     margin-top: 30px;
     padding-bottom: 40px;
 }
+.ultimoTrabalhos{
+  max-height: 180px;
+}
+.fotoPortfolio{
+  max-height: 240px;
+}
+/***** portfolio *****/
 
+.portfolio-container {
+    margin-top: 10px;
+}
+
+.portfolio-title {
+    margin-top: 40px;
+    background: url(../img/line.png) left center repeat-x;
+}
+
+.portfolio-title h2 {
+    width: 200px;
+    margin: 0 auto;
+    background: #fff;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    color: #5d5d5d;
+    font-weight: bold;
+}
+
+.portfolio {
+    margin-top: 40px;
+    padding: 15px 15px 20px 15px;
+    background: #f8f8f8;
+    border-bottom: 2px solid #a33;
+}
+
+.portfolio:hover {
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.05), 0 1px 25px 0 rgba(0,0,0,.05) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    -o-transition: all .5s; -moz-transition: all .5s; -webkit-transition: all .5s; -ms-transition: all .5s; transition: all .5s;
+}
+
+.portfolio .service-icon {
+    font-size: 50px;
+    line-height: 50px;
+    color: #5d5d5d;
+}
+
+.portfolio .service-icon i { vertical-align: middle; }
+
+.portfolio h3 {
+    margin-top: 13px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 14px;
+    color: #5d5d5d;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(255,255,255,.7);
+}
+
+.portfolio p {
+    padding-bottom: 7px;
+    line-height: 24px;
+}
+.foto{
+    max-height: 200px;
+    min-height: 200px;
+}
+.info{
+    padding-top: 40px;
+}
