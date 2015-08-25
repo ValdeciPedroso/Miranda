@@ -46,7 +46,7 @@
 		 }
 		 public static function getMenu(){
 
-			    if (sessaoHelper::getId()== NULL){
+			    if (sessaoHelper::getId() == NULL){
 					return '<script language= "JavaScript"> location.href="404";</script>';
 				}else{
 
@@ -78,6 +78,14 @@
 					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Fotos<b class="caret"></b></a>
 					              <ul class="dropdown-menu">
 					                <li><a href="admin-fotos">Adicionar/Editar</a></li>
+					                <li><a href="admin-categoria">Albuns</a></li>
+					                <li><a href="admin-categoria">Categoria</a></li>
+					              </ul>
+					            </li>
+					            <li class="dropdown">
+					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Album<b class="caret"></b></a>
+					              <ul class="dropdown-menu">
+					                <li><a href="admin-album">Adicionar/Editar</a></li>
 					                <li><a href="admin-categoria">Albuns</a></li>
 					                <li><a href="admin-categoria">Categoria</a></li>
 					              </ul>
@@ -157,7 +165,7 @@
          	return '<div id="page-wrapper">
 				         <div class="col-md-12 alert alert-info">
 				          <div class="col-lg-12 gallery">
-				            <h3> Gerenciar Fotos <small>Painel Administratico | Miranda Fotográfia</small></h3>
+				            <h3> Gerenciar Álbuns <small>Painel Administratico | Miranda Fotográfia</small></h3>
 				            <ul class="breadcrumb">
 				              <li><a href="#">Home</a> <span class="divider"></span></li>
 				              <li class="active"> '.$Titulo.'<span class="divider"></span></li>

@@ -46,10 +46,6 @@
 				    $i++;
 				}
 				echo $i.' imagens adicionadas<br />';
-				
-				
-				
-					
 		}
  
 	

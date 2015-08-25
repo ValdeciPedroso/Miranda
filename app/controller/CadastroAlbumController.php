@@ -12,6 +12,7 @@
 			foreach($cadAlbum as $k => $v){
 				// echo $k.": ".$_POST[$k];
 				$cadAlbum->$k = (isset($_POST[$k])) ? $_POST[$k] : null;
+				
 			}
 			
 			//Adiciona os valores no banco
@@ -24,6 +25,24 @@
 				return 'Erro no Cadastrar Álbum!';
 	       
 		
+		}
+		public static function atualizaAlbum(){
+			$cadAlbum = new CadastroAlbum();
+			
+			foreach($cadAlbum as $k => $v){
+				// echo $k.": ".$_POST[$k];
+				$cadAlbum->$k = (isset($_POST[$k])) ? $_POST[$k] : null;
+				
+			}
+			
+			//Adiciona os valores no banco
+			$id = $cadAlbum->atualizaAlbum();
+			
+			//se ($id) == sucesso
+			if($id)
+				return $id;	
+			else
+				return 'Erro ao Atualizar Álbum!';
 		}
 
 		public static function getUltimosAlbuns($ultimos_qtd){
