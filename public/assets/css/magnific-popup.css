@@ -1,4 +1,4 @@
-/* Magnific Popup CSS */
+/* Magnific Popup CSS  */
 .mfp-bg {
   top: 0;
   left: 0;
@@ -241,7 +241,7 @@ button::-moz-focus-inner {
 img.mfp-img {
   width: auto;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   line-height: 0;
   -webkit-box-sizing: border-box;

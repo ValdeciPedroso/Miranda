@@ -1,4 +1,4 @@
-<?PHP echo AdminGenericosHelper::getStyle(); ?>
+<?PHP echo AdminGenericosHelper::getStyle(); ?> 
 <?PHP echo AdminGenericosHelper::getTopo("..::Restrito | ADM::.."); ?>
 <div id="wrapper">
   <?PHP echo AdminGenericosHelper::getMenu(); ?>
@@ -21,4 +21,4 @@
   </div>
 </div>
 
-<?PHP echo AdminGenericosHelper::getRodape(); ?>
+<?PHP echo AdminGenericosHelper::getRodape(); ?> 

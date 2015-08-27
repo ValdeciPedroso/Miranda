@@ -1,6 +1,6 @@
 <?PHP echo GenericosHelper::getStyle(); ?>
 <?PHP echo GenericosHelper::getTopo("..::Home::.."); ?>
-
+ 
         <!-- Slider -->
         <div class="slider-container">
             <div class="container">

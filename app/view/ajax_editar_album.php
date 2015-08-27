@@ -11,7 +11,7 @@
 			}
 
 		}
-	}
+	}  
 
 </script>
 <div class="container-fluid">

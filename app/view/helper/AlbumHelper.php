@@ -1,5 +1,5 @@
 <?php
-/** 
+/**  
 * Esta responsável pelo HELPER das funções do produto
 * @version 0.1 
 * @author Valdeci Pedroso <valdecipti@gmail.com> 

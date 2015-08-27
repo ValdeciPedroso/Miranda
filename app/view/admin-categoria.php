@@ -1,6 +1,6 @@
 <?PHP echo AdminGenericosHelper::getStyle(); ?>
 <?PHP echo AdminGenericosHelper::getTopo("..::Restrito | ADM::.."); ?>
-
+ 
     <div id="wrapper">
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
          <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de Categorias","Adicionar - Excluir"); ?>
