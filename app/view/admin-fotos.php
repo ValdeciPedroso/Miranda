@@ -23,8 +23,6 @@
               <form action="recebeFoto" method="POST" enctype="multipart/form-data">
                 <fieldset>
                 <div class="form-group">
-                  <label class="control-label" for="adicionar-fotos">Imagem:</label><br/>
-                  <input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file" required ><br/>
                   <div class="form-group">
                   <label class="control-label" for="album">Escolha um Albúm:</label>
                   <div>
@@ -40,6 +38,8 @@
                     </select>
                   </div>
                 </div>
+                <label class="control-label" for="adicionar-fotos">Selecione as imagens:</label><br/>
+                  <input id="adicionar-fotos" name="imagens[]" multiple class="input-file" type="file" required ><br/>
                 </div>
 
                 <!-- Text input-->

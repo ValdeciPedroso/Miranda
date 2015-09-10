@@ -1,6 +1,14 @@
 <?PHP echo AdminGenericosHelper::getStyle(); ?>
 <?PHP echo AdminGenericosHelper::getTopo("..::Restrito | ADM::.."); ?>
- 
+ <script type="text/javascript">
+      function expand(){
+          var comp = document.getElementById('foto_principal')
+          if(comp.style.display == 'none')
+              comp.style.display = 'block';
+          else
+              comp.style.display = 'none';
+      }
+ </script>
     <div id="wrapper">
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
          <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de Albuns","Adicionar"); ?>
@@ -47,10 +55,14 @@
                   <label class="control-label" for="legenda">Legenda</label>  
                   <div>
                   <textarea id="legenda" name="legenda" type="text" placeholder="Descrição ... " class="form-control" row="2"></textarea>
-                    
                   </div>
                 </div>
-
+                <div class="form-group">
+                  <label class="control-label" for="legenda">Destaque</label> <input onclick="expand()" title="Album aparecerá na pagina inicial" name="destaque" type="checkbox">
+                </div>
+                <div class="form-group" id="foto_principal" style="display: none">
+                  <label class="control-label">Escolha uma foto principal</label> <input title="Escolha a foto principal desse album" name="foto_principal" type="file">
+                </div>
                 <!-- Button (Double) -->
                 <div class="form-group">
                   <label class="control-label" for="button1id"></label>

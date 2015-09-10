@@ -9,19 +9,23 @@
 		public $nome;
 		public $categoria;
 		public $legenda;
+		public $destaque;
+		public $foto_principal;
 		
 		public function insertAlbum(){
 		
 			$stmt = DBConn::getInstance()->prepare(
 						"INSERT INTO album
-							(nome,legenda,id_categoria) 
+							(nome,legenda,id_categoria, destaque, foto_principal) 
 							VALUES 
-							(:nome, :legenda,:categoria)"
+							(:nome, :legenda,:categoria,:destaque,:foto_principal)"
 					);
 				
 			$arr[':nome'] = $this->nome;
 			$arr[':legenda'] = $this->legenda;
 			$arr[':categoria'] = $this->categoria;
+			$arr[':destaque'] = $this->destaque;
+			$arr[':foto_principal'] = $this->foto_principal;
 
 			
 			return ($stmt->execute($arr)) ? DBConn::getInstance()->lastInsertId() : false;

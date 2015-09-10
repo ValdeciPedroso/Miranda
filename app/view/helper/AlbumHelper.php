@@ -75,8 +75,11 @@ class AlbumHelper {
 					echo 'Atenção, Já existe um album com esse nome<br />';
 					return;
 				}
-				if($id_album){
+				if($id_album){//se criar pasta e adicionar no banco
 					echo 'Album '.$_POST['nome'].' cadastrado com sucesso';
+					//move a imagem pra pasta
+					$destino = "assets/img/album-img/$id_album/" . $_FILES["foto_principal"]["name"];
+					move_uploaded_file($_FILES["foto_principal"]["tmp_name"], $destino );
 				}
 				// $cadAlbum = new CadastroAlbum();// instancia objeto CadastroImagem
 				
