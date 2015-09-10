@@ -66,13 +66,35 @@
 			return $lista;
 		
 		}
+		public function getAlbunsDestaque(){
+			$stmt = DBConn::getInstance()->prepare("SELECT * FROM album WHERE destaque = 1 ORDER BY id DESC LIMIT 4");
+			
+			$stmt->execute();
+			
+			$lista = array();
+			
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
+				$u = new CadastroAlbum();
+				
+				foreach($row as $k => $v)
+					$u->$k = $v;
+			
+				$lista[] = $u;
+
+			}
+			
+			return $lista;
+		}
 		public static function getAlbuns($ordenar){
-
-		    if (isset($ordenar)!= null){
-               $stmt = DBConn::getInstance()->prepare("SELECT * FROM album ORDER BY id $ordenar" );
-		    }else{
-			   $stmt = DBConn::getInstance()->prepare("SELECT * FROM album");
+			if($ordenar == "DEST"){
+				$stmt = DBConn::getInstance()->prepare("SELECT * FROM album WHERE destaque = 1");
+			}else{
+			    if (isset($ordenar)!= null){
+	               $stmt = DBConn::getInstance()->prepare("SELECT * FROM album ORDER BY id $ordenar" );
+			    }else{
+				   $stmt = DBConn::getInstance()->prepare("SELECT * FROM album");
+				}
 			}
 			$stmt->execute();
 			

@@ -59,6 +59,16 @@
 			return $lista;
 		
 		}
+		public function getAlbunsDestaque(){
+
+		
+			$cadAlbum = new CadastroAlbum();
+
+			$lista = $cadAlbum->getAlbunsDestaque();
+
+			return $lista;
+		
+		}
 
 		public static function getAlbuns($ordenar){
 

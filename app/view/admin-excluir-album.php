@@ -44,6 +44,7 @@
                       <option value="">Ordenar</option>
                       <option value="ASC">Mais Antigos</option>
                       <option value="DESC">Mais Recentes</option>
+                      <option value="DEST">Albuns em destaque</option>
                     </select>
                   </div>
                 </div>
