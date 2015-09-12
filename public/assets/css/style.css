@@ -1107,3 +1107,10 @@ font-size: 11px;
 .ultimosTrabalhos{
 max-height: 250px;
 }
+.albuns{
+  max-height: 300px;
+}
+.text-album{
+    text-align: justify;
+}
+
