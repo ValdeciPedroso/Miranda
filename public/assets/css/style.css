@@ -1085,11 +1085,11 @@ footer {
     line-height: 24px;
 }
 .foto{
-   height: 190px;
+   /*height: 190px;
    width: 260px; 
    text-align: center;
    display: table-cell;
-   vertical-align: middle;
+   vertical-align: middle;*/
 }
 .foto img{
    left:50%;

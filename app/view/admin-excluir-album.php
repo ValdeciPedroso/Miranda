@@ -3,14 +3,25 @@
  
     <div id="wrapper">
          <?PHP echo AdminGenericosHelper::getMenu(); ?>
-         <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de albuns","Excluir"); ?>
+         <?PHP echo AdminGenericosHelper::setTitulo("Gerenciador de albuns","Editar Excluir"); ?>
 <script type="text/javascript">
-    function enviaId(id){
+    function enviaId(id, param){
         if(id){
-          var url = 'ajax_editar_album?id='+id;  // caminho do arquivo que irá buscar os albuns no BD
-          $.get(url, function(dataReturn) {
-            $('#result_ajax').html(dataReturn);  //Coloco os dados de retorno na div result_ajax
-          });
+          if(param == 'edit'){
+              var url = 'ajax_editar_album?id='+id;  // caminho do arquivo que irá buscar os albuns no BD
+              $.get(url, function(dataReturn) {
+                $('#result_ajax').html(dataReturn);  //Coloco os dados de retorno na div result_ajax
+              });
+          }else{
+              var opc = confirm("Excluir album, tem certeza?");
+              if(opc){
+                var url = 'ajax_excluir_album?id='+id;  // caminho do arquivo que irá buscar os albuns no BD
+                $.get(url, function(dataReturn) {
+                    $('#apagar').html(dataReturn);  //Coloco os dados de retorno na div result_ajax
+                });
+                
+              }
+          }
         }
     }
 
@@ -32,7 +43,7 @@
                     <li role="presentation" class="active"><a href="#">Editar e Excluir</a></li>
                   </ul>
                </div><!-- /.navbar-collapse -->
-
+              <div id="apagar"></div>
              <div class="well well-lg">
                   <div class="panel panel-primary">
                   <div class="panel-heading">
@@ -79,10 +90,10 @@
                                           <p><?php echo $lista[$key]->legenda; ?></p>
                                         </div>
                                         <center>
-                                          <button type="button" class="btn btn-info" aria-label="Left Align" onclick="enviaId(this.value)"data-toggle="modal" value="<?php echo $lista[$key]->id; ?>" title="Clique para editar"  data-target=".bs-example-modal-sm">
+                                          <button type="button" class="btn btn-info" aria-label="Left Align" onclick="enviaId(this.value,'edit')" data-toggle="modal" value="<?php echo $lista[$key]->id; ?>" title="Clique para editar"  data-target=".bs-example-modal-sm">
                                             <span class="glyphicon glyphicon-wrench" ></span>
                                           </button>
-                                           <button type="button" class="btn btn-warning" aria-label="right Align">
+                                           <button type="button" class="btn btn-warning" aria-label="right Align" onclick="enviaId(this.value,'exclui')" data-toggle="modal" value="<?php echo $lista[$key]->id; ?>" >
                                             <span class="glyphicon glyphicon-remove" ></span>
                                           </button>
                                         </center>  

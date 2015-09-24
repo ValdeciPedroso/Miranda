@@ -78,25 +78,16 @@
 					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Fotos<b class="caret"></b></a>
 					              <ul class="dropdown-menu">
 					                <li><a href="admin-fotos">Adicionar/Editar</a></li>
-					                <li><a href="admin-categoria">Albuns</a></li>
-					                <li><a href="admin-categoria">Categoria</a></li>
 					              </ul>
 					            </li>
 					            <li class="dropdown">
 					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Album<b class="caret"></b></a>
 					              <ul class="dropdown-menu">
 					                <li><a href="admin-album">Adicionar/Editar</a></li>
-					                <li><a href="admin-categoria">Albuns</a></li>
-					                <li><a href="admin-categoria">Categoria</a></li>
+					                
 					              </ul>
 					            </li>
-					            <li class="dropdown">
-					              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Blog<b class="caret"></b></a>
-					              <ul class="dropdown-menu">
-					                <li><a href=""></a></li>
-					                <li><a href=""></a></li>
-					              </ul>
-					            </li>
+					            	
 					            <li><a href="logout"><i class="fa fa-wrench"></i> Sair</a></li>
 					          </ul>
 					          <ul class="nav navbar-nav navbar-right navbar-user">

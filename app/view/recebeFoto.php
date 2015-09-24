@@ -14,7 +14,7 @@
 	                <?PHP echo FotosHelper::recebeFoto(); ?>
 			    <br/>
 				<br/>
-				<a href="#" class="btn btn-success"> Cadastrar Álbum</a>
+				<a href="admin-excluir-album" class="btn btn-success"> Cadastrar Álbum</a>
 			</div>
 	      </div>
 	</div><!-- /.row -->

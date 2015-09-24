@@ -98,17 +98,12 @@
         <!-- Latest work -->
         <div class="work-container">
 	        <div class="container">
-	        	<div class="row">
-		            <div class="col-sm-12 work-title wow fadeIn">
-		                <h2>Últimos Trabalhos</h2>
-		            </div>
-	            </div>
 	            <?php include("ultimosTrabalhos.php"); ?>
 	        </div>
         </div>
 
         <!-- Testimonials -->
-        <div class="testimonials-container">
+        <!-- <div class="testimonials-container">
 	        <div class="container">
 	        	<div class="row">
 		            <div class="col-sm-12 testimonials-title wow fadeIn">
@@ -118,7 +113,7 @@
 	            <div class="row">
 	                <div class="col-sm-10 col-sm-offset-1 testimonial-list">
 	                	<div role="tabpanel">
-	                		<!-- Tab panes -->
+	                		<!- Tab panes ->
 	                		<div class="tab-content">
 	                			<div role="tabpanel" class="tab-pane fade in active" id="tab1">
 	                				<div class="testimonial-image">
@@ -173,7 +168,7 @@
 	                                </div>
 	                			</div>
 	                		</div>
-	                		<!-- Nav tabs -->
+	                		<!- Nav tabs ->
 	                		<ul class="nav nav-tabs" role="tablist">
 	                			<li role="presentation" class="active">
 	                				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
@@ -192,5 +187,5 @@
 	                </div>
 	            </div>
 	        </div>
-        </div>
+        </div> -->
  <?PHP echo GenericosHelper::getRodape();?>

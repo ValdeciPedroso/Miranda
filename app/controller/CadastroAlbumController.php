@@ -80,6 +80,13 @@
 			return $lista;
 		
 		}
+
+		public static function delete($id){
+			$cadAlbum = new CadastroAlbum();
+
+			return $cadAlbum->delete($id);
+
+		}
 		
 	
 }
