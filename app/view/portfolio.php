@@ -1,5 +1,15 @@
 <?PHP echo GenericosHelper::getStyle(); ?>
 <?PHP echo GenericosHelper::getTopo("..::Home::.."); ?>
+<script type="text/javascript">
+function enviaId(id){
+	if(id){
+	  var url = 'ajax_editar_album?id='+id;  // caminho do arquivo que irá buscar os albuns no BD
+	  $.get(url, function(dataReturn) {
+	    $('#result_ajax').html(dataReturn);  //Coloco os dados de retorno na div result_ajax
+	  });
+	}
+}
+</script>
 
         <!-- Slider -->
         <div class="presentation-container">
@@ -29,48 +39,48 @@
 					 
         <div class="portfolio-container">
 	        <div class="container">
-	              <ul class="pagination pagination-centered">
-				    <li><a href="#"><< Anterior</a></li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">Próximo >></a></li>
-				</ul>
+	        <?PHP  
+              $ordenar = (isset($_GET['ord']))?($_GET['ord']):null;
+              $album = (isset($_GET['album']))?($_GET['album']):null;
+              $pagina = (isset($_GET['pag']))?($_GET['pag']):null;
+             
+              //atualiza album
+              if(isset($_POST['nome']))
+                CadastroAlbumController::atualizaAlbum();
+            ?>
+              <?php include("paginacaoAlbum.php");?>
+
 	            <div class="row">
+	                <?php
+                      $album = new CadastroAlbumController();
+                      $lista = $album->getAlbunsPaginacao($pagina);
+
+                      if(count($lista) == 0){
+                        echo 'Nenhum trabalho cadastrado!';
+                      }foreach ($lista as $key => $value) { ?>
+                       
 	            	<div class="col-sm-offset-1 col-sm-10 portfolio">
 	                    <div class="col-sm-6"> 
-		                    <center><img  class="albuns" alt="foto" src="assets\img\album-img\55\11811439_637961026307365_391337495115376029_n.jpg" ></center>
+		                    <center>
+		                    <?php 
+                                $cadastroImagemController = new cadastroImagemController();
+                                $imagens = $cadastroImagemController->getImagensAlbum($lista[$key]->id);
+                                if($imagens)
+                                   echo ' <img class="albuns" alt="foto" src="assets/img/album-img/'.$lista[$key]->id.'/'.$imagens[0]->endereco.'">'; 
+                                else
+                                   echo '<img class="albuns" alt="foto" src="assets/img/no_image_available.png">'; 
+                            ?> 
+		                    </center>
 		                </div>
 		               	<div class="col-sm-6 info work-bottom descricao_album "> 
-			          	  <h3>Nome do albúm</h3>
-		               	  <p>Detalhes sobre o albúm.. of iteratura, contos, crônicas, romances, poesia, história em quadrinhos, infantil e infantojuvenil.Não serão aceitos livros didáticos, técnicos, religiosos, jornais e revistas de assuntos gerais ou de notícias, manuais, guias, enciclopédias, bem como qualquer material com teor ofensivo, discriminatório e pornográfico.
-
-Grandes doadores, interessados em doar acima de 1.000 volumes, precisarão se adequar a Edital de Chamamento Público lançado no dia 1º de abril de 2013. sasdasd asd as dasd .</p>
+			          	  <h3><?php echo $lista[$key]->nome; ?></h3>
+		               	  <p><?php echo $lista[$key]->legenda; ?></p>
 		               	  <a class="big-link-1" href="album">Veja Mais</a>
 			            </div>
 			         </div>
-			         <div class="col-sm-offset-1 col-sm-10 portfolio">
-		               	<div class="col-sm-6 info work-bottom descricao_album "> 
-			          	  <h3>Nome do albúm</h3>
-		               	  <p>Detalhes sobre o albúm.asdfasdfasdfasdfasdfadsfa É Ferro na Boneca!, álbum de estreia do Novos Baianos ...
-rollingstone.uol.com.br/.../e-ferro-na-boneca-album-de-estreia-do-novos...
-16 de ago de 2015 - O álbum de estreia do Novos Baianos será relançado pela Polysom, como parte da coleção Clássicos em Vinil. Lançado originalmente entre ...sdasdasdf dsaf as df asdf asd fas df asdf asd fa sdf asdf asd fasd f..</p>
-		               	  <a class="big-link-1" href="album">Veja Mais</a>
-			            </div>
-			            <div class="col-sm-6"> 
-		                    <center><img  class="albuns" alt="foto" src="assets\img\album-img\52\wallpaper-da-selva.jpg" ></center>
-		                </div>
-			         </div>
+			         <?php }?>
 			    </div>
-			    <ul class="pagination pagination-centered">
-				    <li><a href="#"> << Anterior </a></li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#"> Próximo >></a></li>
-				</ul>
+			     <?php include("paginacaoAlbum.php");?>
 	         </div>
 	    </div>
         </div>

@@ -30,10 +30,7 @@
 											<a href="inicio"><i class="fa fa-camera"></i><br>Home</a>
 										</li>
 										<li>
-											<a href="portfolio"><i class="fa fa-camera"></i><br>Portfólio</a>
-										</li>
-										<li>
-											<a href="servicos"><i class="fa fa-tasks"></i><br>Serviços</a>
+											<a href="portfolio?pag=1"><i class="fa fa-camera"></i><br>Portfólio</a>
 										</li>
 										<li>
 											<a href="sobre"><i class="fa fa-user"></i><br>Sobre</a>

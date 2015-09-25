@@ -72,13 +72,27 @@
 
 		public static function getAlbuns($ordenar){
 
-		
 			$cadAlbum = new CadastroAlbum();
 
 			$lista = $cadAlbum->getAlbuns($ordenar);
 
 			return $lista;
 		
+		}
+
+		public static function getAlbunsPaginacao($pagina){
+            $cadAlbum = new CadastroAlbum();
+
+			$lista = $cadAlbum->getAlbunsPaginacao($pagina);
+
+			return $lista;
+		}
+		public static function getTotalPaginacao(){
+			$cadAlbum = new CadastroAlbum();
+
+			$totalPaginas = $cadAlbum->getTotalPaginacao();
+
+			return $totalPaginas;
 		}
 		
 	
