@@ -34,7 +34,7 @@
 				   	
 				    // Move o arquivo para o diretório de destino
 				    move_uploaded_file($_FILES["imagens"]["tmp_name"][$i], $destino );
-				 	echo "Imagem: ".$destino.'<br />';
+				 	// echo "Imagem: ".$destino.'<br />';
 				    
 				    // Insere no BD cada imagem para o album adicionado
 				    $cadImg->id_album = $id_album;

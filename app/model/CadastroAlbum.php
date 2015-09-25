@@ -198,6 +198,26 @@
 		}
 
 
+		public static function delete($id){
+			$cont = 0;
+			$stmt = DBConn::getInstance()->prepare("DELETE FROM imagens WHERE id_album = $id");
+
+			if(!$stmt->execute()){
+				$cont++;	
+			}
+
+			$stmt = DBConn::getInstance()->prepare("DELETE FROM album WHERE id = $id");
+			
+			if(!$stmt->execute()){
+				$cont++;		
+			}
+			
+			if($cont == 0){
+				return true;
+			}else{
+				return false;
+			}
+		}
 		
 	
 	}

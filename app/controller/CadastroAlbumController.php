@@ -69,7 +69,7 @@
 			return $lista;
 		
 		}
-
+		
 		public static function getAlbuns($ordenar){
 
 			$cadAlbum = new CadastroAlbum();
@@ -93,7 +93,6 @@
 			$totalPaginas = $cadAlbum->getTotalPaginacao();
 
 			return $totalPaginas;
-		}
-		
-	
+			}
+
 }

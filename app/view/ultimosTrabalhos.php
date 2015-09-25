@@ -1,13 +1,19 @@
 <?php 
 	$ultimosTrabalhos = new CadastroAlbumController();
 	$lista = $ultimosTrabalhos->getAlbunsDestaque();
- ?>
-<div class="row">
+
+if(count($lista) != 0){
+        
+  ?>
+
+	<div class="row">
+			            <div class="col-sm-12 work-title wow fadeIn">
+			                <h2>Albúns em destaque</h2>
+			            </div>
+	</div>
+	<div class="row">
 
 	<?php
-    if(count($lista) == 0){
-        echo 'Nenhum trabalho cadastrado!';
-    }
     foreach ($lista as $key => $value) { ?>
 
 		<div class="col-sm-3">
@@ -28,5 +34,6 @@
 	            </div>
 	        </div>
 	    </div>
+	<?php } ?>
+	</div>
 <?php } ?>
-</div>
