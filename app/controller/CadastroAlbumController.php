@@ -69,7 +69,17 @@
 			return $lista;
 		
 		}
+
+		public function getBuscarFotos($id){
+
 		
+			$cadAlbum = new CadastroAlbum();
+
+			$lista = $cadAlbum->getAlbumId($id);
+
+			return $lista;
+		
+		}
 		public static function getAlbuns($ordenar){
 
 			$cadAlbum = new CadastroAlbum();
