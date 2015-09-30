@@ -103,6 +103,14 @@
 			$totalPaginas = $cadAlbum->getTotalPaginacao();
 
 			return $totalPaginas;
-			}
+		}
+		public static function delete($id){
+			
+			$cadAlbum = new CadastroAlbum();
+
+			$sucesso = $cadAlbum->delete($id);
+
+			return $sucesso;
+		}
 
 }

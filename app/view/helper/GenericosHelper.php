@@ -21,7 +21,7 @@
 										<span class="icon-bar"></span>
 										<span class="icon-bar"></span>
 									</button>
-									<a class="navbar-brand" href="index.html">Miranda - Sua agência de fotográfia</a>
+									<a class="navbar-brand" href="inicio">Miranda - Sua agência de fotográfia</a>
 								</div>
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="top-navbar-1">
