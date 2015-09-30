@@ -75,7 +75,7 @@ function enviaId(id){
 		               	<div class="col-sm-6 info work-bottom descricao_album "> 
 			          	  <h3><?php echo $lista[$key]->nome; ?></h3>
 		               	  <p><?php echo $lista[$key]->legenda; ?></p>
-		               	  <a class="big-link-1" href="album">Veja Mais</a>
+		               	  <a class="big-link-1" <?php echo 'href="album?id='.$lista[$key]->id.'"';?> >Veja Mais</a>
 			            </div>
 			         </div>
 			         <?php }?>

@@ -1113,4 +1113,12 @@ max-height: 250px;
 .text-album{
     text-align: justify;
 }
-
+.ultimosTrabalhos{
+  height: 70px;
+  max-height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.trabalhosDestaque{
+  height: 180px;
+}
