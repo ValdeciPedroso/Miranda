@@ -1,5 +1,5 @@
 <?PHP echo GenericosHelper::getStyle(); ?>
-<?PHP echo GenericosHelper::getTopo("..::Home::.."); ?>
+<?PHP echo GenericosHelper::getTopo("Portfólio - Miranda Fotografia"); ?>
 <script type="text/javascript">
 function enviaId(id){
 	if(id){

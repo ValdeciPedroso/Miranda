@@ -33,9 +33,6 @@
 											<a href="portfolio?pag=1"><i class="fa fa-camera"></i><br>Portfólio</a>
 										</li>
 										<li>
-											<a href="sobre"><i class="fa fa-user"></i><br>Sobre</a>
-										</li>
-										<li>
 											<a href="contato"><i class="fa fa-envelope"></i><br>Contato</a>
 										</li>
 										<li>
