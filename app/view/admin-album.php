@@ -68,7 +68,7 @@
                   <label class="control-label" for="button1id"></label>
                   <div >
                     <button id="button1id" name="button1id" class="btn btn-success">Enviar</button>
-                    <input type="button" class="btn btn-danger" value="Cancelar">
+                    <input type="button" class="btn btn-danger" onclick="window.location='administrador'" value="Cancelar">
                   </div>
                 </div>
 
