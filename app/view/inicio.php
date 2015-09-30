@@ -1,5 +1,5 @@
 <?PHP echo GenericosHelper::getStyle(); ?>
-<?PHP echo GenericosHelper::getTopo("..::Home::.."); ?>
+<?PHP echo GenericosHelper::getTopo("Home - Miranda Fotografia"); ?>
  
         <!-- Slider -->
         <div class="slider-container">

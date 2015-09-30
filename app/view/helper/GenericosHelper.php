@@ -2,12 +2,12 @@
 
 	class GenericosHelper {
 	
-		public static function getTopo($titulo=''){
+		public static function getTopo($titulo){
 		
 			return '  <!DOCTYPE html>
                       <html lang="pt-br">
 					    <head>
-					        <title'.$titulo.'</title>
+					        <title>'.$titulo.'</title>
 					    </head>
 					    <body>  
 
