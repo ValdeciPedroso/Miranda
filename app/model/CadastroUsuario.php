@@ -38,7 +38,7 @@
 			$arr[':nome'] = $this->nome;
 			$arr[':email'] = $this->email;
 			$arr[':telefone'] = $this->telefone;
-			$this->senha = base64_encode($this->senha);
+			$this->senha = password_hash($this->senha, PASSWORD_DEFAULT);// base64_encode();
 			$arr[':senha'] = $this->senha;
 			
 			return ($stmt->execute($arr)) ? DBConn::getInstance()->lastInsertId() : false;
@@ -111,7 +111,7 @@
 			 $st->bindParam(":nome", $this->nome,PDO::PARAM_STR);
 			 $st->bindParam(":email", $this->email,PDO::PARAM_STR);
 			 $st->bindParam(":telefone", $this->telefone,PDO::PARAM_STR);
-			 $this->senha = base64_encode($this->senha);
+			 $this->senha = password_hash($this->senha, PASSWORD_DEFAULT);
 			 $st->bindParam(":senha", $this->senha,PDO::PARAM_STR);
 			
 		     return $st->execute();
@@ -140,7 +140,7 @@
 				$st->bindParam(":email", $email, PDO::PARAM_STR);
 				$st->execute();
 				$row = $st->fetch(PDO::FETCH_ASSOC);
-				if( base64_decode($row['senha']) == $senha){ 
+				if( password_verify ($senha , $row['senha'])){ 
 					
 					if( $row['id']){
 						// a sessão já foi iniciada em outra pagina
